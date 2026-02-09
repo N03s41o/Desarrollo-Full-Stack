@@ -1,21 +1,15 @@
 :root { --primary: #1e50ff; --bg: #f8f9fc; }
-body { background-color: var(--bg); font-family: 'Inter', sans-serif; }
-.x-small { font-size: 0.7rem; }
+body { background-color: var(--bg); font-family: 'Inter', sans-serif; color: #333; }
+.x-small { font-size: 0.75rem; }
 .main-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #1e50ff, #6e45ff); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-
-/* Stepper */
-.s-circle { width: 30px; height: 30px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; font-weight: bold; color: #999; }
-.step.active .s-circle { background: var(--primary); color: #fff; }
+.stepper .s-circle { width: 35px; height: 35px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; font-weight: bold; color: #999; }
+.step.active .s-circle { background: var(--primary); color: #fff; box-shadow: 0 4px 10px rgba(30,80,255,0.3); }
 .step.completed .s-circle { background: #28a745; color: #fff; }
-.s-label { font-size: 0.65rem; color: #999; text-align: center; display: block; }
-
-/* Toggle */
+.s-label { font-size: 0.7rem; color: #999; text-align: center; display: block; line-height: 1.1; }
 .donation-toggle { background: #eee; border-radius: 30px; padding: 4px; display: flex; }
-.toggle-btn { flex: 1; border: none; background: none; padding: 8px; border-radius: 25px; font-size: 0.8rem; transition: 0.3s; }
-.toggle-btn.active { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-
-/* Custom */
-.cause-option, .logo-box { cursor: pointer; transition: 0.2s; }
+.toggle-btn { flex: 1; border: none; background: none; padding: 10px; border-radius: 25px; font-size: 0.85rem; transition: 0.3s; }
+.toggle-btn.active { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); font-weight: bold; }
+.cause-option, .logo-box { cursor: pointer; transition: 0.2s; border: 2px solid #eee !important; }
 .cause-option.active, .logo-box.active { border-color: var(--primary) !important; background: #f0f4ff; }
-.border-dashed { border: 2px dashed #ddd !important; }
-.cert-preview { background: #fff; border-top: 5px solid var(--primary) !important; }
+.border-dashed { border: 2px dashed #ccc !important; }
+.cert-preview { border-top: 6px solid var(--primary) !important; background-image: radial-gradient(#f0f4ff 1px, transparent 1px); background-size: 15px 15px; }

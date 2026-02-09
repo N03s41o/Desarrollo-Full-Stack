@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donativo Giftcard | TecSalud</title>
+    <title>Donativos TecSalud | Regala un Certificado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
@@ -12,25 +12,36 @@
 
 <div class="container py-5">
     <header class="text-center mb-5">
-        <div class="main-icon shadow-sm mb-3"><i class="bi bi-heart-fill"></i></div>
+        <div class="main-icon shadow-sm mb-3">
+            <i class="bi bi-heart-fill"></i>
+        </div>
         <h1 class="fw-bold">Regala un Certificado de Donación</h1>
-        <p class="text-muted small mx-auto" style="max-width: 650px;">Apoya una causa a nombre de un ser querido. El destinatario recibe el regalo y tú el beneficio fiscal.</p>
+        <p class="text-muted mx-auto" style="max-width: 700px;">
+            Transforma una vida a nombre de alguien especial. El destinatario recibirá un certificado personalizado y tú obtendrás el recibo deducible.
+        </p>
     </header>
 
     <div class="row g-4">
         <aside class="col-lg-3">
-            <div class="card border-0 shadow-sm p-4 mb-3 rounded-4 bg-white">
+            <div class="card border-0 shadow-sm p-4 mb-4 rounded-4 bg-white">
+                <h6 class="fw-bold mb-3">Nuestro Impacto</h6>
+                <div class="mb-3">
+                    <h3 class="text-primary fw-bold mb-0">10,000+</h3>
+                    <p class="text-muted x-small">Vidas Cambiadas</p>
+                </div>
+                <div class="mb-3">
+                    <h3 class="text-primary fw-bold mb-0">$2.5M</h3>
+                    <p class="text-muted x-small">Recaudado este año</p>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm p-4 rounded-4 bg-light">
                 <h6 class="fw-bold mb-3">¿Por Qué Donar?</h6>
                 <ul class="list-unstyled mb-0 x-small text-muted">
-                    <li class="mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i>Deducible de impuestos</li>
-                    <li class="mb-2"><i class="bi bi-patch-check-fill text-primary me-2"></i>Impacto social directo</li>
-                    <li><i class="bi bi-patch-check-fill text-primary me-2"></i>Regalo con propósito</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Deducible de impuestos</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>100% destinado a la causa</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Certificado instantáneo</li>
                 </ul>
-            </div>
-            <div class="card border-0 shadow-sm p-4 rounded-4 bg-primary text-white">
-                <h6 class="fw-bold mb-2">Nuestro Impacto</h6>
-                <h3 class="fw-bold mb-0">10,000+</h3>
-                <p class="x-small opacity-75">Vidas transformadas</p>
             </div>
         </aside>
 
@@ -46,16 +57,16 @@
 
                 <div class="donation-toggle mb-4">
                     <button class="toggle-btn active" id="btn-ind" onclick="toggleDonationType('individual')">Individual</button>
-                    <button class="toggle-btn" id="btn-corp" onclick="toggleDonationType('masiva')">Empresas (Masiva)</button>
+                    <button class="toggle-btn" id="btn-corp" onclick="toggleDonationType('masiva')">Empresas (Carga Masiva)</button>
                 </div>
 
                 <section id="step-1" class="form-step">
-                    <h6 class="fw-bold mb-3">1. Selecciona la Causa</h6>
+                    <h6 class="fw-bold mb-3 text-primary">Selecciona la Causa</h6>
                     <div class="cause-list mb-4">
-                        <div class="cause-option active p-3 border rounded-3 mb-2" onclick="selectCause(this, 'Becas con Propósito')">
+                        <div class="cause-option active p-3 border rounded-3 mb-2" onclick="selectCause(this, 'Becas con Propósito (Tecmilenio)')">
                             <p class="fw-bold mb-0 small">Becas con Propósito (Tecmilenio)</p>
                         </div>
-                        <div class="cause-option p-3 border rounded-3 mb-2" onclick="selectCause(this, 'Jóvenes Construyendo el Mañana')">
+                        <div class="cause-option p-3 border rounded-3 mb-2" onclick="selectCause(this, 'Jóvenes Construyendo el Mañana (Tec de Monterrey)')">
                             <p class="fw-bold mb-0 small">Jóvenes Construyendo el Mañana (Tec de Monterrey)</p>
                         </div>
                         <div class="cause-option p-3 border rounded-3 mb-2" onclick="selectCause(this, 'TecSalud')">
@@ -63,85 +74,94 @@
                         </div>
                     </div>
 
-                    <h6 class="fw-bold mb-3">2. Monto y Destinatario</h6>
+                    <h6 class="fw-bold mb-3 text-primary">Monto del Donativo (MXN)</h6>
                     <div class="row g-2 mb-4">
                         <div class="col-md-3"><button class="btn btn-outline-primary w-100 btn-monto active" onclick="setMonto(500, this)">$500</button></div>
                         <div class="col-md-3"><button class="btn btn-outline-primary w-100 btn-monto" onclick="setMonto(1000, this)">$1,000</button></div>
-                        <div class="col-md-6"><input type="number" id="input-monto" class="form-control" placeholder="Otro monto (MXN)"></div>
+                        <div class="col-md-6"><input type="number" id="input-monto" class="form-control" placeholder="Otro monto"></div>
                     </div>
 
                     <div id="fields-individual">
+                        <h6 class="fw-bold mb-3 text-primary">Datos del Destinatario</h6>
                         <div class="row g-3">
-                            <div class="col-md-6"><input type="text" id="reg-nombre" class="form-control" placeholder="Nombre de quien recibe *"></div>
-                            <div class="col-md-6"><input type="email" id="reg-email" class="form-control" placeholder="Correo del destinatario *"></div>
+                            <div class="col-md-4"><input type="text" id="reg-nombre" class="form-control" placeholder="Nombre *"></div>
+                            <div class="col-md-4"><input type="email" id="reg-email" class="form-control" placeholder="Correo *"></div>
+                            <div class="col-md-4"><input type="tel" id="reg-tel" class="form-control" placeholder="Teléfono (10 dígitos) *"></div>
                         </div>
                     </div>
 
-                    <div id="fields-masiva" class="d-none">
-                        <div class="csv-drop p-4 border-dashed rounded-3 text-center">
-                            <i class="bi bi-file-earmark-spreadsheet text-muted fs-2"></i>
-                            <p class="small mb-0">Sube tu archivo CSV con la lista de nombres y correos</p>
-                            <input type="file" class="form-control form-control-sm mt-2" accept=".csv">
+                    <div id="fields-masiva" class="d-none text-center">
+                        <div class="p-4 border-dashed rounded-3">
+                            <i class="bi bi-file-earmark-arrow-up fs-1 text-muted"></i>
+                            <p class="small mt-2">Carga tu archivo CSV con destinatarios</p>
+                            <input type="file" id="bulk-file" class="form-control form-control-sm">
                         </div>
                     </div>
 
                     <div class="text-end mt-4">
-                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(2)">Siguiente</button>
+                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(2)">Continuar</button>
                     </div>
                 </section>
 
                 <section id="step-2" class="form-step d-none">
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <h6 class="fw-bold mb-3">Personalización</h6>
-                            <p class="x-small text-muted">Elige el logo institucional:</p>
+                            <h6 class="fw-bold mb-3">Elige el Logo Institucional</h6>
                             <div class="d-flex gap-2 mb-4">
-                                <div class="logo-box active border p-2 rounded" onclick="updateCert('logo', 'tecmilenio', this)"><img src="https://logosandtypes.com/wp-content/uploads/2020/08/universidad-tecmilenio.svg" height="20"></div>
-                                <div class="logo-box border p-2 rounded" onclick="updateCert('logo', 'tec', this)"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Logo_del_ITESM.svg/1280px-Logo_del_ITESM.svg.png" height="20"></div>
-                                <div class="logo-box border p-2 rounded" onclick="updateCert('logo', 'tecsalud', this)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3f10YYMJng1RtBBVvMPBhQtDeBUYPhl12Fw&s" height="20"></div>
+                                <div class="logo-box active border p-2 rounded" onclick="updateCert('logo', 'tecmilenio', this)">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Logo_Tecmilenio.png" height="25">
+                                </div>
+                                <div class="logo-box border p-2 rounded" onclick="updateCert('logo', 'tec', this)">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Logo_Tec_ de_Monterrey.svg/1200px-Logo_Tec_de_Monterrey.svg.png" height="25">
+                                </div>
+                                <div class="logo-box border p-2 rounded" onclick="updateCert('logo', 'tecsalud', this)">
+                                    <img src="https://mexicohealth.com/wp-content/uploads/2021/03/TecSalud-logo.png" height="25">
+                                </div>
                             </div>
-                            <label class="small fw-bold mb-2">Mensaje en el certificado</label>
-                            <textarea class="form-control x-small" rows="3" placeholder="Ej: Gracias por ser parte del cambio..." oninput="updateCert('msg', this.value)"></textarea>
+                            <label class="small fw-bold mb-2">Mensaje Personalizado</label>
+                            <textarea id="msg-input" class="form-control x-small" rows="3" placeholder="Ej: ¡Muchas felicidades!" oninput="updateCert('msg', this.value)"></textarea>
                         </div>
                         <div class="col-md-6">
-                            <div class="cert-preview p-4 border rounded-3 shadow-sm text-center">
-                                <img id="p-logo" src="https://logosandtypes.com/wp-content/uploads/2020/08/universidad-tecmilenio.svg" height="35" class="mb-3">
-                                <p class="x-small mb-1">Reconocimiento a:</p>
-                                <h6 id="p-name" class="fw-bold text-primary">[Nombre]</h6>
+                            <div class="cert-preview p-4 border rounded shadow-sm text-center bg-white">
+                                <img id="p-logo" src="https://upload.wikimedia.org/wikipedia/commons/4/47/Logo_Tecmilenio.png" height="40" class="mb-3">
+                                <p class="x-small mb-1">Reconocimiento otorgado a:</p>
+                                <h5 id="p-name" class="fw-bold text-primary">[Nombre]</h5>
                                 <p id="p-msg" class="x-small fst-italic mt-3 text-muted">"Mensaje personalizado"</p>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between mt-4">
                         <button class="btn btn-light rounded-pill px-4" onclick="navTo(1)">Anterior</button>
-                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(3)">Siguiente</button>
+                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(3)">Continuar</button>
                     </div>
                 </section>
 
                 <section id="step-3" class="form-step d-none">
-                    <h6 class="fw-bold mb-3">Datos de Facturación</h6>
-                    <div class="row g-3 mb-4">
+                    <h6 class="fw-bold mb-3 text-primary">Información para Facturación</h6>
+                    <div class="row g-3">
                         <div class="col-md-6"><input type="text" id="fisc-rfc" class="form-control" placeholder="RFC *"></div>
                         <div class="col-md-6"><input type="text" id="fisc-razon" class="form-control" placeholder="Razón Social *"></div>
                         <div class="col-md-12"><input type="text" class="form-control" placeholder="Domicilio Fiscal *"></div>
                     </div>
-                    <div class="d-flex justify-content-between">
+                    <div class="d-flex justify-content-between mt-4">
                         <button class="btn btn-light rounded-pill px-4" onclick="navTo(2)">Anterior</button>
-                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(4)">Siguiente</button>
+                        <button class="btn btn-primary px-5 rounded-pill" onclick="navTo(4)">Continuar</button>
                     </div>
                 </section>
 
-                <section id="step-4" class="form-step d-none">
-                    <h6 class="fw-bold mb-4">Finalizar Pago</h6>
-                    <div class="p-3 bg-light rounded-3 mb-4 border-start border-primary border-4">
-                        <div class="d-flex justify-content-between small">
-                            <span>Donativo Total:</span>
-                            <span class="fw-bold text-primary" id="final-monto">$500.00 MXN</span>
-                        </div>
+                <section id="step-4" class="form-step d-none text-center">
+                    <div class="p-4 bg-primary-subtle rounded-4 mb-4">
+                        <p class="mb-1">Total a donar:</p>
+                        <h2 class="fw-bold text-primary" id="final-monto">$500.00 MXN</h2>
+                    </div>
+                    <div class="row g-3 text-start mb-4">
+                        <div class="col-12"><input type="text" class="form-control" placeholder="Número de Tarjeta"></div>
+                        <div class="col-6"><input type="text" class="form-control" placeholder="MM/AA"></div>
+                        <div class="col-6"><input type="text" class="form-control" placeholder="CVV"></div>
                     </div>
                     <div class="d-flex justify-content-between">
                         <button class="btn btn-light rounded-pill px-4" onclick="navTo(3)">Anterior</button>
-                        <button class="btn btn-success px-5 rounded-pill shadow-sm" onclick="alert('¡Gracias por tu apoyo!')">Pagar ahora</button>
+                        <button class="btn btn-success px-5 rounded-pill shadow-sm" onclick="alert('¡Donativo realizado con éxito!')">Pagar Ahora</button>
                     </div>
                 </section>
 
